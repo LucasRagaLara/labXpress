@@ -1,5 +1,149 @@
 <app-menu></app-menu>
+<div class="carousel">
+    <p-carousel [value]="images" [numVisible]="1" [numScroll]="1" [circular]="true" [responsiveOptions]="responsiveOptions" autoplayInterval="4000">
+        <ng-template let-image #item>
+            <div class="card">
+                <div class="image-container">
+                    <img [src]="image.src" [alt]="image.alt" class="carousel-image"/>
 
-<div class="inicio">
-    <h1>hola desde INICIO</h1>
+                    <ng-container *ngIf="image.contentType === 'carousel1'">
+                        <div class="overlay-card bg-gradient-to-r from-indigo-700 to-indigo-900">
+                            <h1>{{ image.title }}</h1>
+                            <p class="description">{{ image.description }}</p>
+                            <div class="features">
+                                <div class="feature-item text-[#056d92]">
+                                    <img src="/images/carousel/furgoneta-de-reparto.png" alt="" width="125px">
+                                    <p class="description-xl">Atenció immediata</p>
+                                </div>
+                                <div class="feature-item text-[#056d92]">
+                                    <img src="/images/carousel/casa.png" alt="" width="125px">
+                                    <p class="description-xl">Servei a domicili</p>
+                                </div>
+                                <div class="feature-item text-[#056d92]">
+                                    <img src="/images/carousel/microbiologia.png" alt="" width="125px">
+                                    <p class="description-xl">Proves precises</p>
+                                </div>
+                            </div>
+                            <p class="description mb-2">✔️ Ràpid i eficient</p>
+                            <p class="description mb-10">🕒 Dilluns a Divendres 8:00 - 20:00</p>
+                            <button (click)="navigate(image.link)" class="boton-overlay">
+                                {{ image.actionText }}
+                            </button>
+                        </div>
+                    </ng-container>
+
+                    <ng-container *ngIf="image.contentType === 'carousel2'">
+                        <div class="overlay-card bg-gradient-to-r from-indigo-700 to-indigo-900 p-6 rounded-lg shadow-lg flex justify-center">
+                            <h1 class="text-3xl font-bold mb-4 text-center">Estem a l'última!</h1>
+                            <p class="description mb-4">
+                                🚚 L'interior de les nostres furgonetes compta amb la tecnologia més avançada del mercat, per la qual cosa obtindràs els millors resultats, de forma ràpida i eficaç.
+                            </p>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                                <div class="flex flex-col items-center p-4 rounded-lg ">
+                                    <img src="/images/carousel/no-virus.png" alt="" width="100px">
+                                </div>
+                                <div class="flex flex-col items-center p-4 rounded-lg ">
+                                    <img src="/images/carousel/pregnancy-test.png" alt="" width="100px">
+                                </div>
+                                <div class="flex flex-col items-center p-4 rounded-lg ">
+                                    <img src="/images/carousel/pacemaker.png" alt="" width="100px">
+                                </div>
+                            </div>
+                            <p class="description text-lg mb-8">A més, l'interior està dissenyat per oferir la màxima comoditat mentre treballem per a tu.</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div class="flex flex-col items-center bg-white text-blue-800 p-4 rounded-lg shadow-md">
+                                    <img src="/images/carousel/apartment.png" alt="Espai" class="w-20 h-20 mb-2"/>
+                                    <p class="font-semibold text-2xl mb-2">Espai optimitzat</p>
+                                    <p class="text-sm text-center text-xl">Aprofitem cada racó per garantir la màxima comoditat.</p>
+                                </div>
+                                <div class="flex flex-col items-center bg-white text-blue-800 p-4 rounded-lg shadow-md">
+                                    <img src="/images/carousel/convenient.png" alt="Confort" class="w-20 h-20 mb-2"/>
+                                    <p class="font-semibold text-2xl mb-2">Confort superior</p>
+                                    <p class="text-sm text-center text-xl">Amb seients ergonòmics i tot el necessari per a un viatge sense estrès.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-container>
+                    
+                    <ng-container *ngIf="image.contentType === 'carousel3'">
+                        <div class="overlay-card bg-gradient-to-r from-indigo-700 to-indigo-900 p-6 rounded-lg shadow-lg flex justify-center items-center">
+                            <div class="flex flex-col md:flex-row items-center justify-between">
+                                <div class="flex-1 text-center md:text-left">
+                                    <h1 class="text-3xl font-bold mb-4 text-white">{{ image.title }}</h1>
+                                    <p class="description text-lg text-white mb-4">
+                                        🛍️ Vols algun merchandising original? Tenim una selecció exclusiva per a tu!
+                                    </p>
+                                    <p class="description text-lg text-white mb-12">
+                                        🎁 Des de botes personalitzades fins a tasses i bolis en forma de pipeta. Porta't un record divertit i pràctic!
+                                    </p>
+                    
+                                    <!-- Sección 1 - Botes y Bolis -->
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                                        <div class="flex flex-col items-center justify-center">
+                                            <h2 class="text-3xl font-semibold text-white mb-2">Agendes personalitzades</h2>
+                                            <p class="text-lg text-center text-white mb-6">Escull el teu disseny favorit i porta'l on vulguis!</p>
+                                            <div class="w-[150px] h-[150px] bg-white rounded-full border-none flex items-center justify-center">
+                                                <img src="/images/carousel/cuaderno.png" alt="" width="100px">
+                                            </div>
+
+                                        </div>
+                                        <div class="flex flex-col items-center justify-center">
+                                            <h2 class="text-3xl font-semibold text-white mb-2">Bolis en forma de pipeta</h2>
+                                            <p class="text-lg text-center text-white mb-6">Escriu amb estil amb aquests bolis tan originals!</p>
+                                            <div class="w-[150px] h-[150px] bg-white rounded-full border-none flex items-center justify-center">
+                                                <img src="/images/carousel/pipeta.png" alt="" width="100px">
+                                            </div>
+                                        </div>
+                                    </div>
+                    
+                                    <!-- Sección 2 - Tasses y Llaveros -->
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
+                                        <div class="flex flex-col items-center justify-center">
+                                            <h2 class="text-3xl font-semibold text-white mb-2">Tasses personalitzades</h2>
+                                            <p class="text-lg text-center text-white mb-6">Disfruta de la teva beguda amb una tassa única!</p>
+                                            <div class="w-[150px] h-[150px] bg-white rounded-full border-none flex items-center justify-center">
+                                                <img src="/images/carousel/cafe.png" alt="" width="100px">
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-col items-center justify-center">
+                                            <h2 class="text-3xl font-semibold text-white mb-2">Llaveros divertits</h2>
+                                            <p class="text-lg text-center text-white mb-6">Porta un record de la teva experiència amb estil!</p>
+                                            <div class="w-[150px] h-[150px] bg-white rounded-full border-none flex items-center justify-center">
+                                                <img src="/images/carousel/llavero.png" alt="" width="100px">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-container>
+                    
+
+                    <ng-container *ngIf="image.contentType === 'carousel4'">
+                        <div class="overlay-card bg-gradient-to-r from-indigo-700 to-indigo-900 p-6 rounded-lg shadow-lg flex justify-center items-center">
+                            <div class="flex flex-col md:flex-row items-center justify-between">
+                                <!-- Missatge a la dreta -->
+                                <div class="flex-1 text-center md:text-left">
+                                    <h1 class="text-3xl font-bold text-white mb-4">{{ image.title }}</h1>
+                                    <p class="description text-lg text-white mb-6">
+                                        Si tens alguna dubte, contacta amb nosaltres i t'assessorarem personalment per resoldre qualsevol qüestió.
+                                    </p>
+                                    <p class="description text-lg text-white mb-6">
+                                        Estem disponibles per ajudar-te amb el que necessites. Des de consells fins a informació més detallada sobre els nostres productes i serveis. No dubtes a contactar-nos!
+                                    </p>
+                                    <div class="w-full items-center justify-center flex">
+                                        <button (click)="navigate(image.link)" class="boton-overlay">
+                                            {{ image.actionText }}
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </ng-container>
+
+                </div>
+            </div>
+        </ng-template>
+    </p-carousel>
 </div>
