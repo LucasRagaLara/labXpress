@@ -1,0 +1,28 @@
+# Node modules
+/node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependencias de producción
+/dist/
+/out-tsc/
+
+# Archivos de configuración de IDE
+.vscode/
+.idea/
+
+# Archivos generados por el sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de configuración de Angular CLI
+.angular/
+
+# Entornos de test
+/coverage/
+
+# Entornos de producción
+.env

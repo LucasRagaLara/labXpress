@@ -1,0 +1,18 @@
+<div class="menu">
+    <div class="logo">
+        <img src="/images/logo/logo_labxpress.png" alt="LabXpress Logo">
+      </div>
+    <nav class="navbar">
+        <button class="hamburger" (click)="toggleMenu()">
+          <span *ngIf="!menuOpen">☰</span>
+          <span *ngIf="menuOpen">✖</span> 
+        </button>
+        <ul class="nav-links" [class.open]="menuOpen">
+          <li><a href="/inicio">Inicio</a></li>
+          <li><a href="/acerca">Acerca de</a></li>
+          <li><a href="/servicios">Servicios</a></li>
+          <li><a href="/contacto">Contacto</a></li>
+          <li><a href="/nuestra-app">Nuestra App</a></li>
+        </ul>
+    </nav>
+</div>
