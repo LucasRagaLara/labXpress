@@ -1,88 +1,115 @@
+.responsiveCarousel
+    display: none
 
 .carousel
-    width: 95%
+    width: 85vw
     display: flex
     align-items: center 
     justify-content: center
     margin: 0 auto
-    overflow-x: hidden
+
     .card
         width: 100%
         display: flex
-        height: 75vh
+        align-items: center
+        justify-content: center
+        margin: 0 auto
         flex-wrap: wrap 
+
         .image-container
             width: 100%
             display: flex
             align-items: center
-            justify-content: start
-            margin: 0 2%
+            justify-content: center
+            margin: 0 1%
+
             .carousel-image
-                width: 60%
-                height: 75vh
+                width: 60%  /* Se ajusta a un 60% del ancho de la vista */
+                height: 36vw /* Se ajusta a un 50% del alto de la vista */
                 aspect-ratio: 16/9
                 object-fit: cover  
                 border-radius: 10px 0 0 10px
-            .overlay-card
-                width: 40%
-                border-radius: 0 10px 10px 0
-                background-color: #1a2c39
-                height: 75vh 
-                display: flex
-                flex-direction: column
-                overflow: auto
-                justify-content: bottom
-                h1
-                    font-size: 3.5rem
-                    margin: 2% auto
-                    width: 90%
-                    border-radius: 5px
-                    padding: 1.5rem
-                    text-align: left
-                
-                .description
-                    text-align: justify
-                    font-size: 1.5rem
-                    width: 90%
-                    margin-left: 2rem
 
-                .description-xl
-                    font-size: 2rem
-                    margin-top: 2vh
-                    padding: 2%
-            .boton-overlay
+        .overlay-card
+            width: 40%
+            border-radius: 0 10px 10px 0
+            background-color: #1a2c39
+            height: 36vw
+            display: flex
+            flex-direction: column
+            overflow: auto
+            justify-content: center
+
+            h1
+                font-size: 1.5rem
                 margin: 2% auto
-                border-radius: 15px
-                border: none
-                background-color: #086f86 !important 
-                cursor: pointer
-                font-size: 1.3rem
-                padding: 1.5%
-                transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out
-                &:hover
-                    transform: scale(1.1)
-            .features
-                display: flex
-                flex-direction: row
-                align-items: center
-                margin: 5%
-                justify-content: center
-                gap: 5%
                 width: 90%
-                
-                .feature-item
-                    display: inline
-                    flex-direction: column
-                    border-radius: 15px
-                    width: 25%
-                    min-height: 20vh
-                    align-items: center
-                    justify-content: center
-                    text-align: center
-                    background: white
-                    img 
-                        margin: 5% auto
+                border-radius: 5px
+                padding: 1rem
+                text-align: center
+            
+            .description
+                text-align: justify
+                font-size: 0.85rem
+                width: 90%
+                margin-left: 2rem
 
+            .description-xl
+                font-size: 0.8rem
+                margin-top: 2vh
+                padding: 2%
+
+        .boton-overlay
+            margin: 2% auto
+            border-radius: 15px
+            border: none
+            background-color: #086f86 !important 
+            cursor: pointer
+            font-size: 1rem
+            padding: 2%
+            transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out
+            &:hover
+                transform: scale(1.1)
+
+        .features
+            display: flex
+            flex-direction: row
+            align-items: center
+            margin: 5%
+            justify-content: center
+            gap: 5%
+            width: 90%
+
+            .feature-item
+                display: flex 
+                flex-direction: column
+                align-items: center
+                justify-content: center
+                border-radius: 15px
+                width: 25%
+                min-height: 18vh
+                text-align: center
+                background: white
+
+                img 
+                    margin: 0% auto
+
+/* Media Query para pantallas pequeñas */
 @media (max-width: 768px)
-  .carousel
-    display: none
+    .carousel
+        display: none 
+        
+    .responsiveCarousel
+        display: flex
+
+        .boton-overlay
+            margin: 2% auto
+            border-radius: 15px
+            border: none
+            background-color: #086f86 !important 
+            cursor: pointer
+            font-size: 1rem
+            padding: 3%
+            transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out
+            &:hover
+                transform: scale(1.1)
