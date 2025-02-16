@@ -1,9 +1,45 @@
-/* You can add global styles to this file, and also import other style files */
+/* Variables */
 $primary-color: #0f2230
 $accent-color: #4ac5d2
 $font-stack: 'Arial', sans-serif
 $font-color: #c2cccf
 
-body
-    background-color: $primary-color
-    color: $font-color
+
+/* Importación de iconos de Prime */
+@import "primeicons/primeicons.css"
+
+/* Estilo global */
+body 
+    min-height: 100vh !important
+    background-repeat: no-repeat
+    background-color: #0f2230
+
+    /* Cambiar el color de las flechas de navegación */
+
+
+.p-galleria-next-button, .p-galleria-prev-button
+    color: white !important /* Color de las flechas, por ejemplo, blanco */
+    background-color: #0f223099 !important /* Fondo transparente oscuro para las flechas */
+    transform: scale(1) !important /* Escala por defecto */
+    transition: transform 0.3s ease !important /* Animación para la transformación */
+
+/* Efecto de agrandar al pasar el ratón */
+.p-galleria-next-button:hover, .p-galleria-prev-button:hover
+    transform: scale(1.1) !important /* Aumenta el tamaño al pasar el ratón */
+
+.p-button-text.p-button-secondary
+    color: white !important
+.p-button-text.p-button-secondary:hover
+    background: #4B6BFF !important
+
+.p-accordionheader
+    background: #d1dde2 !important
+    color: #364153 !important
+
+.p-accordionheader:hover
+        color: #615fff !important
+
+.p-accordioncontent-content
+    background: #d1dde2 !important
+    color: #364163 !important
+    border-radius: 0px 0px 5px 5px !important

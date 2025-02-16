@@ -1,5 +1,251 @@
-<app-menu></app-menu>
 
-<div class="inicio">
-    <h1>hola desde INICIO</h1>
+<div class="cuerpo">
+
+    <app-menu></app-menu>
+
+    <div class="carousel">
+        <p-carousel [value]="images" *ngIf="images" [numVisible]="1" [numScroll]="1" [circular]="true" [responsiveOptions]="responsiveOptions">
+    
+            <ng-template let-image #item>
+                <div class="card">
+                    <div class="image-container">
+                        <img [src]="image.src" [alt]="image.alt" class="carousel-image"/>
+    
+                        <ng-container *ngIf="image.contentType === 'carousel1'">
+                            <div class="overlay-card bg-gradient-to-r from-indigo-700 to-indigo-900">
+                                <h1 class="font-bold">{{ image.title }}</h1>
+                                <p class="description">{{ image.description }}</p>
+                                <div class="features">
+                                    <div class="feature-item text-[#056d92]">
+                                        <img [src]="image.icono1"  alt="" width="45px">
+                                        <p class="description-xl">Atenció immediata</p>
+                                    </div>
+                                    <div class="feature-item text-[#056d92]">
+                                        <img [src]="image.icono2"  alt="" width="45px">
+                                        <p class="description-xl">Servei a domicili</p>
+                                    </div>
+                                    <div class="feature-item text-[#056d92]">
+                                        <img [src]="image.icono3" alt="" width="45px">
+                                        <p class="description-xl">Proves precises</p>
+                                    </div>
+                                </div>
+                                <p class="description mb-2">✔️ Ràpid i eficient</p>
+                                <p class="description mb-6">🕒 Dilluns a Divendres 8:00 - 20:00</p>
+                                <button (click)="navigate(image.link)" class="boton-overlay">
+                                    {{ image.actionText }}
+                                </button>
+                            </div>
+                        </ng-container>
+    
+                        <ng-container *ngIf="image.contentType === 'carousel2'">
+                            <div class="overlay-card bg-gradient-to-r from-indigo-700 to-indigo-900 rounded-lg shadow-lg flex justify-center">
+                                <h1 class="text-2xl font-bold mb-4 text-center">{{image.title}}</h1>
+                                <p class="description mb-4">🚚{{image.description}}</p>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-4">
+                                    <div class="flex flex-col items-center rounded-lg ">
+                                        <img [src]="image.icono1" alt="" width="45px">
+                                    </div>
+                                    <div class="flex flex-col items-center rounded-lg ">
+                                        <img [src]="image.icono2" alt="" width="45px">
+                                    </div>
+                                    <div class="flex flex-col items-center rounded-lg ">
+                                        <img [src]="image.icono3" alt="" width="45px">
+                                    </div>
+                                </div>
+                                <p class="description text-lg mb-6">{{image.description2}}</p>
+                                <div class="grid grid-cols-1 md:grid-cols-2 w-[75%] mx-auto gap-4 mb-2">
+                                    <div class="flex flex-col items-center bg-white text-blue-800 p-4 rounded-lg shadow-md">
+                                        <img [src]="image.icono4" alt="Espai" class="w-12 h-12"/>
+                                        <p class="font-semibold mb-2">Espai optimitzat</p>
+                                        <p class="text-sm text-center">Garantir la màxima comoditat</p>
+                                    </div>
+                                    <div class="flex flex-col items-center bg-white text-blue-800 p-4 rounded-lg shadow-md">
+                                        <img [src]="image.icono5" alt="Confort" class="w-12 h-12"/>
+                                        <p class="font-semibold mb-2">Confort superior</p>
+                                        <p class="text-sm text-center">Per a unes probes sense estrès</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-container>
+                        
+                        <ng-container *ngIf="image.contentType === 'carousel3'">
+                            <div class="overlay-card bg-gradient-to-r from-indigo-700 to-indigo-900 p-6 rounded-lg shadow-lg flex justify-center items-center">
+                                <div class="flex flex-col md:flex-row items-center justify-between">
+                                    <div class="flex-1 text-center md:text-left">
+                                        <h1 class="text-xl font-bold mb-4 text-white">{{ image.title }}</h1>
+                                        <!-- Sección 1 - Botes y Bolis -->
+                                        <div class="grid grid-cols-1 md:grid-cols-2 mb-4">
+    
+                                            <div class="flex flex-col items-center justify-center">
+                                                <h2 class="font-semibold text-white mb-2">Agendes personalitzades</h2>
+                                                <p class="text-center text-white mb-2 text-[0.75rem]">Escull el teu disseny favorit i porta'l on vulguis!</p>
+                                                <div class="w-[75px] h-[75px] bg-white rounded-full border-none flex items-center justify-center">
+                                                    <img [src]="image.icono1" alt="" width="45px">
+                                                </div>
+                                            </div>
+    
+                                            <div class="flex flex-col items-center justify-center">
+                                                <h2 class="font-semibold text-white mb-2">Bolis en forma de pipeta</h2>
+                                                <p class="text-center text-white mb-2 text-[0.75rem]">Escriu amb estil amb aquests bolis tan originals!</p>
+                                                <div class="w-[75px] h-[75px] bg-white rounded-full border-none flex items-center justify-center">
+                                                    <img [src]="image.icono2" alt="" width="45px">
+                                                </div>
+                                            </div>
+    
+                                        </div>
+                        
+                                        <!-- Sección 2 - Tasses y Llaveros -->
+                                        <div class="grid grid-cols-1 md:grid-cols-2">
+    
+                                            <div class="flex flex-col items-center justify-center">
+                                                <h2 class="font-semibold text-white mb-2">Tasses personalitzades</h2>
+                                                <p class="text-center text-white mb-2 text-[0.75rem]">Disfruta de la teva beguda amb una tassa única!</p>
+                                                <div class="w-[75px] h-[75px] bg-white rounded-full border-none flex items-center justify-center">
+                                                    <img [src]="image.icono3" alt="" width="45px">
+                                                </div>
+                                            </div>
+    
+                                            <div class="flex flex-col items-center justify-center">
+                                                <h2 class="font-semibold text-white mb-2">Llaveros divertits</h2>
+                                                <p class="text-center text-white mb-2 text-[0.75rem]">Porta un record de la teva experiència amb estil!</p>
+                                                <div class="w-[75px] h-[75px] bg-white rounded-full border-none flex items-center justify-center">
+                                                    <img [src]="image.icono4" alt="" width="45px">
+                                                </div>
+                                            </div>
+    
+                                        </div>
+    
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-container>
+                        
+    
+                        <ng-container *ngIf="image.contentType === 'carousel4'">
+                            <div class="overlay-card bg-gradient-to-r from-indigo-700 to-indigo-900 p-6 rounded-lg shadow-lg flex justify-center items-center">
+                                <div class="flex flex-col md:flex-row items-center justify-between">
+                                    <!-- Missatge a la dreta -->
+                                    <div class="flex-1 text-center md:text-left">
+                                        <h1 class="text-3xl font-bold text-white mb-4">{{ image.title }}</h1>
+                                        <p class="description text-white mb-6">
+                                            Si tens alguna dubte, contacta amb nosaltres i t'assessorarem personalment per resoldre qualsevol qüestió.
+                                        </p>
+                                        <p class="description text-white mb-6">
+                                            Estem disponibles per ajudar-te amb el que necessites. Des de consells fins a informació més detallada sobre els nostres productes i serveis. No dubtes a contactar-nos!
+                                        </p>
+                                        <div class="w-full items-center justify-center flex">
+                                            <button (click)="navigate(image.link)" class="boton-overlay">
+                                                {{ image.actionText }}
+                                            </button>
+                                        </div>
+    
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-container>
+    
+                    </div>
+                </div>
+            </ng-template>
+    
+        </p-carousel>
+    </div>
+    
+    <div class="responsiveCarousel flex justify-center w-full mx-auto">
+        <p-carousel [value]="images" *ngIf="images" [numVisible]="1" [numScroll]="1" [circular]="true"
+            orientation="vertical" verticalViewPortHeight="130vw"
+            contentClass="flex items-center justify-center">
+            <ng-template let-image #item>
+                <div class="px-4 w-full">
+                    <!-- Imagen -->
+                    <div class="w-full h-[65vw]">
+                        <img [src]="image.src" [alt]="image.alt"
+                            class="w-full aspect-video object-cover rounded-t-lg h-full" />
+                    </div>
+                    
+                    <!-- Contenedor de contenido -->
+                    <div class="w-full h-[65vw] bg-gradient-to-r from-indigo-700 to-indigo-900 rounded-b-lg">
+                        <ng-container *ngIf="image.contentType === 'carousel1'">
+    
+                            <div class="p-3 flex flex-col justify-center">
+                                <h1 class="font-bold text-xl my-2">{{ image.title }}</h1>
+                                <p class="description text-sm">{{ image.description }}</p>
+                                <div class="flex flex-row w-full justify-center items-center gap-3 mt-8">
+                                    <img [src]="image.icono1" alt="" class="w-1/4">
+                                    <img [src]="image.icono2" alt="" class="w-1/4">
+                                    <img [src]="image.icono3" alt="" class="w-1/4">
+                                </div>
+                            </div>
+                        </ng-container>
+                        
+                        <ng-container *ngIf="image.contentType === 'carousel2'">
+                            <div class="bg-gradient-to-r from-indigo-700 to-indigo-900 w-full p-3 rounded-b-lg flex flex-col justify-center">
+                                <h1 class="font-bold text-xl my-2">{{ image.title }}</h1>
+                                <p class="description text-sm md:text-base">{{ image.description }}</p>
+                                <div class="flex flex-row w-full justify-center items-center gap-3 mt-8">
+                                    <img [src]="image.icono1" alt="" class="w-1/4">
+                                    <img [src]="image.icono2" alt="" class="w-1/4">
+                                    <img [src]="image.icono3" alt="" class="w-1/4">
+                                </div>
+                            </div>
+                        </ng-container>
+    
+                        <ng-container *ngIf="image.contentType === 'carousel3'">
+                            <div class="bg-gradient-to-r from-indigo-700 to-indigo-900 w-full p-3 rounded-b-lg flex flex-col justify-center">
+                                <h1 class="font-bold text-xl my-2">{{ image.title }}</h1>
+                                <p class="description text-sm md:text-base">{{ image.description1 }}</p>
+                            </div>
+                            <div class="flex text-center flex-row gap-x-4  items-center justify-center mt-4">
+                                <!-- Sección 1 - Botes y Bolis -->
+                                    <div class="flex flex-col items-center justify-center">
+                                        <h2 class="font-semibold text-white mb-2">Agendes</h2>
+                                        <div class="w-[75px] h-[75px] bg-white rounded-full border-none flex items-center justify-center">
+                                            <img [src]="image.icono1" alt="" width="45px">
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col items-center justify-center">
+                                        <h2 class="font-semibold text-white mb-2">Bolis</h2>
+                                        <div class="w-[75px] h-[75px] bg-white rounded-full border-none flex items-center justify-center">
+                                            <img [src]="image.icono2" alt="" width="45px">
+                                        </div>
+                                    </div>
+    
+                                    <div class="flex flex-col items-center justify-center">
+                                        <h2 class="font-semibold text-white mb-2">Tasses</h2>
+                                        <div class="w-[75px] h-[75px] bg-white rounded-full border-none flex items-center justify-center">
+                                            <img [src]="image.icono3" alt="" width="45px">
+                                        </div>
+                                    </div>
+    
+                                    <div class="flex flex-col items-center justify-center">
+                                        <h2 class="font-semibold text-white mb-2">Llaveros</h2>
+                                        <div class="w-[75px] h-[75px] bg-white rounded-full border-none flex items-center justify-center">
+                                            <img [src]="image.icono4" alt="" width="45px">
+                                        </div>
+                                    </div>
+                            </div>
+                        </ng-container>
+    
+                        <ng-container *ngIf="image.contentType === 'carousel4'">
+                            <div class="bg-gradient-to-r from-indigo-700 to-indigo-900 w-full p-3 rounded-b-lg flex flex-col justify-center">
+                                <h1 class="font-bold text-xl my-2">{{ image.title }}</h1>
+                                <p class="description text-lg md:text-base">{{ image.description }}</p>
+                            </div>
+    
+                            <div class="w-full items-center justify-center flex">
+                                <button (click)="navigate(image.link)" class="boton-overlay">
+                                    {{ image.actionText }}
+                                </button>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+            </ng-template>
+        </p-carousel>
+    </div>
+
+    <footer class="bg-[#d1dde2] text-gray-700 text-center p-4 fixed bottom-0 w-full">
+        <p class="text-sm md:text-base">&copy; 2025 LabXpress. Tots els drets reservats.</p>
+    </footer> 
+
 </div>
