@@ -1,6 +1,6 @@
 <app-menu></app-menu>
 
-<div class="bg-[#0f2230] text-white pt-20 lg:px-12 xl:px-6 items-center justify-center flex ">
+<div class="bg-[#0f2230] text-[#b3bfc4] pt-20 lg:px-12 xl:px-6 items-center justify-center flex ">
 
     <div class="container mx-auto px-4 flex flex-col md:flex-col md:mb-6 items-center xl:justify-center xl:p-0 xl:m-0 xl:flex-col">
         <div class="container flex flex-col md:flex-col items-center xl:justify-center xl:flex-row md:mb-6">
@@ -8,13 +8,13 @@
             <div class="md:w-full md:mb-5 text-justify md:text-left xl:text-justify xl:justify-start xl:items-start xl:flex xl:flex-col xl:w-[65%]">
                 <div class="xl:w-[90%]">
                     <h1 class="text-4xl font-bold text-indigo-500">Nostres serveis</h1>
-                    <p class="mt-4 text-lg">
+                    <p class="mt-4 ">
                         El nostre servei està dissenyat per facilitar l'accés a proves mèdiques de manera econòmica i eficient. L'objectiu és millorar l'experiència del pacient, oferint-li una atenció més pròxima i sense necessitat de desplaçar-se a un laboratori.
                     </p>
-                    <p class="mt-4 text-lg">
+                    <p class="mt-4">
                         Alguns dels serveis que oferim a LabXpress inclouen anàlisis bàsiques com els nivells de glucosa, colesterol i altres proves de salut essencials.
                     </p>
-                    <p class="mt-4 text-lg">
+                    <p class="mt-4">
                         La nostra estratègia de preus es basa en oferir serveis a un preu competitiu i accessible, amb estratègies com preus promocionals, paquets especials per a grups, famílies i col·lectius específics.
                     </p>
                 </div>
@@ -71,7 +71,7 @@
             </div>
 
             <!-- Caja a la derecha con la información de la prueba -->
-            <div class="w-full xl:w-[50%] p-6 bg-white shadow-md rounded-md border border-gray-200 my-6 xl:mt-0" *ngIf="informacionSeleccionada && informacionSeleccionada.pruebas.length > 0">
+            <div class="w-full xl:w-[50%] p-6 bg-[#d1dde2] shadow-md rounded-md border border-gray-200 my-6 xl:mt-0" *ngIf="informacionSeleccionada && informacionSeleccionada.pruebas.length > 0">
               <h2 class="text-2xl font-semibold text-indigo-600" *ngIf="informacionSeleccionada">{{ informacionSeleccionada.titulo }}</h2>
               
               <div *ngIf="informacionSeleccionada" class="xl:w-auto xl:h-auto">
@@ -90,8 +90,8 @@
                 <!-- Plan Básico -->
                 <div class="w-full sm:w-1/2 lg:w-1/3 md:p-4">
                     <div class="bg-[#d1dde2] text-indigo-600 rounded-lg shadow-lg p-6 h-full">
-                        <h2 class="text-3xl font-bold mb-4">💙 Plan Básico</h2>
-                        <p class="text-xl mb-4">19,99€ / mes</p>
+                        <h2 class="text-2xl font-bold mb-4">💙 Plan Básico</h2>
+                        <p class="text-lg mb-4">19,99€ / mes</p>
                         <p class="mb-4 text-gray-700">Este plan incluye las pruebas básicas necesarias para un chequeo general de salud.</p>
                         <ul class="mb-4 text-lg text-gray-700">
                             <li>✅ Glucosa</li>
@@ -104,8 +104,8 @@
                 <!-- Plan Completo -->
                 <div class="w-full sm:w-1/2 lg:w-1/3 md:p-4 md:mb-0 my-12">
                     <div class="bg-[#d1dde2] text-indigo-600 rounded-lg shadow-lg p-6 h-full">
-                        <h2 class="text-3xl font-bold mb-4">💜 Plan Completo</h2>
-                        <p class="text-xl mb-4">49,95€ / mes</p>
+                        <h2 class="text-2xl font-bold mb-4">💜 Plan Completo</h2>
+                        <p class="text-lg mb-4">49,95€ / mes</p>
                         <p class="mb-4 text-gray-700">Ideal para quienes buscan un seguimiento exhaustivo de su salud a largo plazo, con pruebas periódicas y asistencia continua.</p>
                         <ul class="mb-4 text-lg text-gray-700">
                             <li>✅ VIH</li>
@@ -120,8 +120,8 @@
                 <!-- Plan Empresas -->
                 <div class="w-full sm:w-1/2 lg:w-1/3 md:p-4">
                     <div class="bg-[#d1dde2] text-indigo-600 rounded-lg shadow-lg p-6 h-full">
-                        <h2 class="text-3xl font-bold mb-4">💛 Plan Empresas</h2>
-                        <p class="text-xl mb-4">Personalizado</p>
+                        <h2 class="text-2xl font-bold mb-4">💛 Plan Empresas</h2>
+                        <p class="text-lg mb-4">Personalizado</p>
                         <p class="mb-4 text-gray-700">Diseñado para empresas que deseen ofrecer a sus empleados pruebas periódicas de salud como parte de su bienestar corporativo.</p>
                         <ul class="mb-4 text-lg text-gray-700">
                             <li>✅ Contacto directo con nuestro equipo médico</li>
@@ -137,7 +137,7 @@
         </div>
 
         <!-- Sección de Subscripción de Seguimiento Médico -->
-        <div class="container mx-auto md:px-4 flex flex-col items-center justify-center md:my-10 mb-6 ">
+        <div class="container mx-auto md:px-4 flex flex-col items-center justify-center md:my-10 mb-6">
 
             <h2 class="text-4xl font-bold text-indigo-500 mb-6 px-4 md:px-0">📅 Subscripció de Seguiment Mèdic</h2>
 
@@ -156,8 +156,25 @@
             </div>
         </div>
 
+<!-- Contenedor para faqs-->
+        <div class="p-6 w-full mx-auto flex flex-col md:w-[90%]">
+            <!-- Título de las FAQ -->
+            <h2 class="md:text-4xl font-bold text-indigo-500 flex items-center mb-6 text-3xl">
+                ❓ FAQ | Preguntas Frecuentes
+            </h2>
 
-        
+                <p-accordion [multiple]="true" [value]="activeIndexes" class="">
+                    <div *ngFor="let faq of faqs; let i = index">
+                        <p-accordion-panel [value]="faq.value"  class="mb-4 rounded-b-lg">
+                            <p-accordion-header>{{ faq.titulo }}</p-accordion-header>
+                            <p-accordion-content>
+                            <p class="m-0">{{ faq.descripcion }}</p>
+                            </p-accordion-content>
+                        </p-accordion-panel>
+                    </div>
+                </p-accordion>
+        </div>
+
     </div>
 </div>
 

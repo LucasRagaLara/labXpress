@@ -1,10 +1,13 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef,  AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
+import { isPlatformBrowser } from '@angular/common';
 import { MenuComponent } from "../menu/menu.component";
 import { GalleriaModule } from 'primeng/galleria';
+import { AccordionModule } from 'primeng/accordion';
 
 @Component({
   selector: 'app-servicios',
-  imports: [MenuComponent, GalleriaModule],
+  imports: [MenuComponent, GalleriaModule, AccordionModule],
   templateUrl: './servicios.component.html',
   styleUrls: ['./servicios.component.sass'],
 })
@@ -13,10 +16,20 @@ export class ServiciosComponent implements OnInit {
   position: 'bottom' | 'top' | 'left' | 'right' | undefined;
   showIndicatorsOnItem: boolean = true;
   images: any[] = [];
-  
-  // Variable para mostrar la información de la prueba seleccionada
   informacionSeleccionada: { titulo: string, pruebas: Array<{ titulo: string, descripcion: string }> } | null = null;
 
+  activeIndexes: number[] = [];
+
+  faqs = [
+    { titulo: '💡 Com funciona?', descripcion: 'El servei LabXpress permet realitzar proves mèdiques a domicili amb l\'objectiu de facilitar l\'accés a serveis de salut a les persones. Un cop sol·licitada la prova, un tècnic es desplaça fins al teu domicili per realitzar-la, i els resultats seran lliurats en un termini determinat a través de la nostra plataforma.', value: '0' },
+    { titulo: '💰 Preu del servei', descripcion: 'El cost mensual del servei és de 29,99€, el qual inclou totes les proves mèdiques bàsiques que es poden realitzar a domicili, així com l\'assessorament a través de la nostra plataforma en línia. Hi ha opcions de serveis addicionals disponibles a preus individuals.', value: '1' },
+    { titulo: '📅 Dates de recordatoris', descripcion: 'Amb LabXpress, els usuaris rebran notificacions personalitzades per recordar-los les dates de les seves proves mèdiques, així com les consultes per a seguiments periòdics. Aquests recordatoris s\'ajustaran a les necessitats de salut de cada usuari, basats en el seu historial mèdic.', value: '2' },
+    { titulo: '🔬 Què és LabXpress?', descripcion: 'LabXpress és una empresa que ofereix proves mèdiques a domicili, amb l\'objectiu de proporcionar un servei ràpid, còmode i accessible per a tots. Mitjançant el nostre sistema, els pacients poden realitzar-se diverses proves sense necessitat de desplaçar-se a un centre mèdic, obtenint resultats ràpidament a través de la nostra plataforma en línia.', value: '3' },
+    { titulo: '📑 Com puc sol·licitar una prova?', descripcion: 'Per sol·licitar una prova mèdica amb LabXpress, només cal que accedeixis a la nostra aplicació mòbil o al lloc web. En el procés de sol·licitud, podràs seleccionar el tipus de prova que necessites i agendar una cita amb un tècnic que es desplaçarà al teu domicili per realitzar-la. Un cop finalitzada la prova, rebràs els resultats de manera electrònica.', value: '4' },
+    { titulo: '🕒 Quan rebré els resultats?', descripcion: 'Els resultats de les proves realitzades a través de LabXpress es lliuraran en un termini de 24 a 48 hores, depenent de la complexitat de la prova. Un cop els resultats estiguin disponibles, seran enviats de manera segura a la teva aplicació mòbil o correu electrònic per a una fàcil consulta.', value: '5' }
+  ];
+  
+  
   puntos = [
     { 
       clase: "p1",
@@ -62,9 +75,16 @@ export class ServiciosComponent implements OnInit {
       ]
     }
   ];
-  
 
-  constructor(private cdr: ChangeDetectorRef) {}
+  preguntasFAQ = [
+    { pregunta: '¿Cuánto cuesta la suscripción?', respuesta: 'La suscripción tiene un coste de 15,99€ al mes.' },
+    { pregunta: '¿Cuándo se realiza la consulta médica?', respuesta: 'La consulta médica telefónica se realiza cada 3 meses.' },
+    { pregunta: '¿Qué incluye el informe de salud anual?', respuesta: 'El informe incluye un análisis completo de tu estado de salud y recomendaciones para el futuro.' },
+    { pregunta: '¿Puedo cancelar mi suscripción?', respuesta: 'Sí, puedes cancelar tu suscripción en cualquier momento.' }
+  ];
+  
+  constructor(private cdr: ChangeDetectorRef) {
+  }
 
   ngOnInit() {
     this.images = [
@@ -75,14 +95,19 @@ export class ServiciosComponent implements OnInit {
       { itemImageSrc: 'assets/images/gallery/oxigeno.png', alt: 'Prueba de oxígeno en sangre', title: 'Oxígeno en Sangre' },
       { itemImageSrc: 'assets/images/gallery/alergia.png', alt: 'Resultados de prueba de alergia', title: 'Prueba de Alergia' },
     ];    
+
   }
 
   mostrarInformacion(punto: any) {
-    // Asignamos la información de la prueba seleccionada al objeto
     this.informacionSeleccionada = {
       titulo: punto.titulo,
       pruebas: punto.pruebas
     };
     this.cdr.detectChanges();
   }
+
+  toggleAccordion(index: number) {
+    this.activeIndexes = this.activeIndexes.includes(index) ? this.activeIndexes.filter(i => i !== index) : [...this.activeIndexes, index];
+  }
+
 }
