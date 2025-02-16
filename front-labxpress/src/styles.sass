@@ -10,10 +10,12 @@ $font-color: #c2cccf
 
 /* Estilo global */
 body 
+    display: grid
+    flex-direction: column
     min-height: 100vh !important
     background-repeat: no-repeat
     background-color: #0f2230
-
+    grid-template-rows: auto 1fr auto
     /* Cambiar el color de las flechas de navegación */
 
 
@@ -59,3 +61,6 @@ body
     color: white !important
     background-color: #615fff !important
     padding: 1% !important
+
+.pi-check-circle, .pi-shield, .pi-users
+    font-size: 2rem !important

@@ -1,0 +1,73 @@
+@charset "UTF-8";
+/* Variables */
+/* Importación de iconos de Prime */
+@import "primeicons/primeicons.css";
+/* Estilo global */
+body {
+  display: grid;
+  flex-direction: column;
+  min-height: 100vh !important;
+  background-repeat: no-repeat;
+  background-color: #0f2230;
+  grid-template-rows: auto 1fr auto;
+  /* Cambiar el color de las flechas de navegación */
+}
+
+.p-galleria-next-button, .p-galleria-prev-button {
+  color: white !important;
+  background-color: rgba(15, 34, 48, 0.6) !important;
+  transform: scale(1) !important;
+  transition: transform 0.3s ease !important;
+}
+
+/* Efecto de agrandar al pasar el ratón */
+.p-galleria-next-button:hover, .p-galleria-prev-button:hover {
+  transform: scale(1.1) !important;
+}
+
+.p-button-text.p-button-secondary {
+  color: white !important;
+}
+
+.p-button-text.p-button-secondary:hover {
+  background: #4B6BFF !important;
+}
+
+.p-accordionheader {
+  background: #d1dde2 !important;
+  color: #364153 !important;
+}
+
+.p-accordionheader:hover {
+  color: #615fff !important;
+}
+
+.p-accordioncontent-content {
+  background: #d1dde2 !important;
+  color: #364163 !important;
+  border-radius: 0px 0px 5px 5px !important;
+}
+
+.p-inputtext {
+  background-color: #615fff !important;
+  border: none !important;
+  outline: none !important;
+}
+
+.p-inputtext-filled-focus-background {
+  background-color: #615fff !important;
+}
+
+.p-inputtext:focus {
+  background-color: #615fff !important;
+}
+
+.p-floatlabel label {
+  color: white !important;
+  background-color: #615fff !important;
+  padding: 1% !important;
+}
+
+.pi-check-circle, .pi-shield, .pi-users {
+  font-size: 2rem !important;
+}/*# sourceMappingURL=styles.css.map */

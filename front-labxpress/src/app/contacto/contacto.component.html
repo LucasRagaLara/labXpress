@@ -1,63 +1,66 @@
-<app-menu></app-menu>
+<div class="min-h-screen">
 
-<div class="bg-[#0f2230] text-white pt-8 px-4 sm:px-6 lg:px-12 flex flex-col">
+  <app-menu></app-menu>
 
-  <div class="container mx-auto flex flex-col md:mb-6 items-center justify-center xl:p-0 xl:flex-col">
-    
-    <!-- Formulari de contacte -->
-    <div class="w-full xl:w-[50%] bg-[#d1dde2] text-indigo-600 rounded-lg shadow-lg p-8">
-      <h2 class="text-3xl font-bold text-indigo-500 mb-6">Formulari de Contacte</h2>
+  <div class="bg-[#0f2230] text-white pt-8 px-4 sm:px-6 lg:px-12 flex flex-col">
 
-      <form action="mailto:labxpressLXP@gmail.com" method="post" enctype="text/plain" onsubmit="setTimeout(() => this.reset(), 100);">
-        <div class="flex items-center justify-center gap-x-4 md:flex-row flex-col">
-            <p-floatlabel variant="on" class="w-full">
-                <input pInputText id="nom" name="nom" autocomplete="off" required minlength="3" maxlength="30" class="w-full p-4 rounded-md border border-indigo-400 focus:ring-2 focus:ring-indigo-500 focus:outline-none" />
-                <label for="nom">Nom</label>
-            </p-floatlabel>
-    
-            <p-floatlabel variant="on" class="w-full mt-4 md:mt-0">
-                <input pInputText id="cognoms" name="cognoms" autocomplete="off" required minlength="3" maxlength="30" class="w-full p-4 rounded-md border border-indigo-400 focus:ring-2 focus:ring-indigo-500 focus:outline-none" />
-                <label for="cognoms">Cognoms</label>
-            </p-floatlabel>
-        </div>
-        
-        <div class="flex items-center justify-center gap-x-4 flex-col md:my-8 my-4">
-            <p-floatlabel variant="on" class="w-full">
-                <input type="email" class="w-full p-4 rounded-md border border-indigo-400" minlength="7" maxlength="35" required  pInputText id="correu" name="correu" autocomplete="off"/>
-                <label for="correu">Correu electrònic</label>
-            </p-floatlabel>
-        </div>    
+    <div class="container mx-auto flex flex-col md:mb-6 items-center justify-center xl:p-0 xl:flex-col">
+      
+      <!-- Formulari de contacte -->
+      <div class="w-full xl:w-[50%] bg-[#d1dde2] text-indigo-600 rounded-lg shadow-lg p-8">
+        <h2 class="text-3xl font-bold text-indigo-500 mb-6">Formulari de Contacte</h2>
 
-        <div class="mb-3 text-start flex items-start justify-start w-full">
-            <p-floatlabel variant="on" class="w-full">
-                <textarea pTextarea id="missatge" maxlength="300" rows="5" name="missatge" class="w-full p-4 rounded-md border border-indigo-400 bg-indigo-500 outline-none text-white resize-none" required></textarea>
-                <label for="missatge">Escriu el teu missatge</label>
-            </p-floatlabel>
-        </div>
+        <form action="mailto:labxpressLXP@gmail.com" method="post" enctype="text/plain" onsubmit="setTimeout(() => this.reset(), 100);">
+          <div class="flex items-center justify-center gap-x-4 md:flex-row flex-col">
+              <p-floatlabel variant="on" class="w-full">
+                  <input pInputText id="nom" name="nom" autocomplete="off" required minlength="3" maxlength="30" class="w-full p-4 rounded-md border border-indigo-400 focus:ring-2 focus:ring-indigo-500 focus:outline-none" />
+                  <label for="nom">Nom</label>
+              </p-floatlabel>
+      
+              <p-floatlabel variant="on" class="w-full mt-4 md:mt-0">
+                  <input pInputText id="cognoms" name="cognoms" autocomplete="off" required minlength="3" maxlength="30" class="w-full p-4 rounded-md border border-indigo-400 focus:ring-2 focus:ring-indigo-500 focus:outline-none" />
+                  <label for="cognoms">Cognoms</label>
+              </p-floatlabel>
+          </div>
+          
+          <div class="flex items-center justify-center gap-x-4 flex-col md:my-8 my-4">
+              <p-floatlabel variant="on" class="w-full">
+                  <input type="email" class="w-full p-4 rounded-md border border-indigo-400" minlength="7" maxlength="35" required  pInputText id="correu" name="correu" autocomplete="off"/>
+                  <label for="correu">Correu electrònic</label>
+              </p-floatlabel>
+          </div>    
 
-        <div class="flex justify-center mt-4">
-            <button type="submit" class="rounded bg-indigo-700 px-8 py-3 text-white hover:bg-indigo-800 transition duration-200 transform hover:scale-105 focus:outline-none cursor-pointer">Enviar</button>
-        </div>
-      </form>
+          <div class="mb-3 text-start flex items-start justify-start w-full">
+              <p-floatlabel variant="on" class="w-full">
+                  <textarea pTextarea id="missatge" maxlength="300" rows="5" name="missatge" class="w-full p-4 rounded-md border border-indigo-400 bg-indigo-500 outline-none text-white resize-none" required></textarea>
+                  <label for="missatge">Escriu el teu missatge</label>
+              </p-floatlabel>
+          </div>
 
-    </div>
+          <div class="flex justify-center mt-4">
+              <button type="submit" class="rounded bg-indigo-700 px-8 py-3 text-white hover:bg-indigo-800 transition duration-200 transform hover:scale-105 focus:outline-none cursor-pointer">Enviar</button>
+          </div>
+        </form>
 
-    <!-- Xarxes socials -->
-    <div class="w-full xl:w-[75%] mt-2 md:mt-0 flex flex-col items-center justify-center md:mb-6 mb-8">
-      <h2 class="text-3xl font-bold text-indigo-500 my-6">Segueix-nos a les nostres xarxes socials</h2>
-      <div class="flex space-x-12 text-3xl text-indigo-600">
-        <a href="https://www.facebook.com/share/19dfsSGpfD/" target="_blank" class="hover:text-indigo-300 transition duration-200">
-          <i class="fab fa-facebook"></i>
-        </a>
-        <a href="https://www.instagram.com/labxpresslxp/" target="_blank" class="hover:text-indigo-300 transition duration-200">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://www.tiktok.com/@labxpresslxp?_t=ZN-8tt31fZrrPC&_r=1 " target="_blank" class="hover:text-indigo-300 transition duration-200">
-          <i class="fab fa-tiktok"></i>
-        </a>
       </div>
-    </div>
 
+      <!-- Xarxes socials -->
+      <div class="w-full xl:w-[75%] mt-2 md:mt-0 flex flex-col items-center justify-center md:mb-6 mb-8">
+        <h2 class="text-3xl font-bold text-indigo-500 my-6">Segueix-nos a les nostres xarxes socials</h2>
+        <div class="flex space-x-12 text-3xl text-indigo-600">
+          <a href="https://www.facebook.com/share/19dfsSGpfD/" target="_blank" class="hover:text-indigo-300 transition duration-200">
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a href="https://www.instagram.com/labxpresslxp/" target="_blank" class="hover:text-indigo-300 transition duration-200">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.tiktok.com/@labxpresslxp?_t=ZN-8tt31fZrrPC&_r=1 " target="_blank" class="hover:text-indigo-300 transition duration-200">
+            <i class="fab fa-tiktok"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
   </div>
 </div>
 
