@@ -4,34 +4,34 @@
 
   <div class="container mx-auto flex flex-col md:mb-6 items-center justify-center xl:p-0 xl:flex-col">
     
-    <!-- Formulario de contacto -->
+    <!-- Formulari de contacte -->
     <div class="w-full xl:w-[50%] bg-[#d1dde2] text-indigo-600 rounded-lg shadow-lg p-8">
-      <h2 class="text-3xl font-bold text-indigo-500 mb-6">Formulario de Contacto</h2>
+      <h2 class="text-3xl font-bold text-indigo-500 mb-6">Formulari de Contacte</h2>
 
       <form action="mailto:labxpressLXP@gmail.com" method="post" enctype="text/plain" onsubmit="setTimeout(() => this.reset(), 100);">
         <div class="flex items-center justify-center gap-x-4 md:flex-row flex-col">
             <p-floatlabel variant="on" class="w-full">
-                <input pInputText id="nombre" name="nombre" autocomplete="off" required minlength="3" maxlength="30" class="w-full p-4 rounded-md border border-indigo-400 focus:ring-2 focus:ring-indigo-500 focus:outline-none" />
-                <label for="nombre">Nombre</label>
+                <input pInputText id="nom" name="nom" autocomplete="off" required minlength="3" maxlength="30" class="w-full p-4 rounded-md border border-indigo-400 focus:ring-2 focus:ring-indigo-500 focus:outline-none" />
+                <label for="nom">Nom</label>
             </p-floatlabel>
     
             <p-floatlabel variant="on" class="w-full mt-4 md:mt-0">
-                <input pInputText id="apellidos" name="apellidos" autocomplete="off" required minlength="3" maxlength="30" class="w-full p-4 rounded-md border border-indigo-400 focus:ring-2 focus:ring-indigo-500 focus:outline-none" />
-                <label for="apellidos">Apellidos</label>
+                <input pInputText id="cognoms" name="cognoms" autocomplete="off" required minlength="3" maxlength="30" class="w-full p-4 rounded-md border border-indigo-400 focus:ring-2 focus:ring-indigo-500 focus:outline-none" />
+                <label for="cognoms">Cognoms</label>
             </p-floatlabel>
         </div>
         
         <div class="flex items-center justify-center gap-x-4 flex-col md:my-8 my-4">
             <p-floatlabel variant="on" class="w-full">
-                <input type="email" class="w-full p-4 rounded-md border border-indigo-400" minlength="7" maxlength="35" required  pInputText id="correo" name="correo" autocomplete="off"/>
-                <label for="correo">Correo</label>
+                <input type="email" class="w-full p-4 rounded-md border border-indigo-400" minlength="7" maxlength="35" required  pInputText id="correu" name="correu" autocomplete="off"/>
+                <label for="correu">Correu electrònic</label>
             </p-floatlabel>
         </div>    
 
         <div class="mb-3 text-start flex items-start justify-start w-full">
             <p-floatlabel variant="on" class="w-full">
-                <textarea pTextarea id="mensaje" maxlength="300" rows="5" name="mensaje" class="w-full p-4 rounded-md border border-indigo-400 bg-indigo-500 outline-none text-white resize-none" required></textarea>
-                <label for="mensaje">Escribe tu mensaje</label>
+                <textarea pTextarea id="missatge" maxlength="300" rows="5" name="missatge" class="w-full p-4 rounded-md border border-indigo-400 bg-indigo-500 outline-none text-white resize-none" required></textarea>
+                <label for="missatge">Escriu el teu missatge</label>
             </p-floatlabel>
         </div>
 
@@ -42,9 +42,9 @@
 
     </div>
 
-    <!-- Redes sociales -->
+    <!-- Xarxes socials -->
     <div class="w-full xl:w-[75%] mt-2 md:mt-0 flex flex-col items-center justify-center md:mb-6 mb-8">
-      <h2 class="text-3xl font-bold text-indigo-500 my-6">Síguenos en nuestras redes sociales</h2>
+      <h2 class="text-3xl font-bold text-indigo-500 my-6">Segueix-nos a les nostres xarxes socials</h2>
       <div class="flex space-x-12 text-3xl text-indigo-600">
         <a href="https://www.facebook.com/share/19dfsSGpfD/" target="_blank" class="hover:text-indigo-300 transition duration-200">
           <i class="fab fa-facebook"></i>
@@ -64,4 +64,3 @@
   <footer class="bg-[#d1dde2] text-gray-700 text-center p-4 w-full flex justify-center relative bottom-0 items-end">
     <p class="text-sm md:text-base">&copy; 2025 LabXpress. Tots els drets reservats.</p>
 </footer>
-
