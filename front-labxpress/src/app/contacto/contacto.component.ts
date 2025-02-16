@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
+import { InputTextModule } from 'primeng/inputtext';
 import { MenuComponent } from "../menu/menu.component";
-
+import { FloatLabel } from 'primeng/floatlabel';
 @Component({
   selector: 'app-contacto',
-  imports: [MenuComponent],
   templateUrl: './contacto.component.html',
-  styleUrl: './contacto.component.sass'
+  styleUrls: ['./contacto.component.css'],
+  imports: [MenuComponent, InputTextModule, FloatLabel],
 })
 export class ContactoComponent {
+
+  constructor() {}
 
 }
