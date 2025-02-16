@@ -13,3 +13,21 @@ body
     min-height: 100vh !important
     background-repeat: no-repeat
     background-color: #0f2230
+
+    /* Cambiar el color de las flechas de navegación */
+
+
+.p-galleria-next-button, .p-galleria-prev-button
+    color: white !important /* Color de las flechas, por ejemplo, blanco */
+    background-color: #0f223099 !important /* Fondo transparente oscuro para las flechas */
+    transform: scale(1) !important /* Escala por defecto */
+    transition: transform 0.3s ease !important /* Animación para la transformación */
+
+/* Efecto de agrandar al pasar el ratón */
+.p-galleria-next-button:hover, .p-galleria-prev-button:hover
+    transform: scale(1.1) !important /* Aumenta el tamaño al pasar el ratón */
+
+.p-button-text.p-button-secondary
+    color: white !important
+.p-button-text.p-button-secondary:hover
+    background: #4B6BFF !important
