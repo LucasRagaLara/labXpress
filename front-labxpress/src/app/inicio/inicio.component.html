@@ -168,8 +168,8 @@
                         <ng-container *ngIf="image.contentType === 'carousel1'">
     
                             <div class="p-3 flex flex-col justify-center">
-                                <h1 class="font-bold text-xl my-2">{{ image.title }}</h1>
-                                <p class="description text-sm">{{ image.description }}</p>
+                                <h1 class="font-bold text-xl my-2 text-white">{{ image.title }}</h1>
+                                <p class="description text-sm text-white">{{ image.description }}</p>
                                 <div class="flex flex-row w-full justify-center items-center gap-3 mt-8">
                                     <img [src]="image.icono1" alt="" class="w-1/4">
                                     <img [src]="image.icono2" alt="" class="w-1/4">
@@ -180,8 +180,8 @@
                         
                         <ng-container *ngIf="image.contentType === 'carousel2'">
                             <div class="bg-gradient-to-r from-indigo-700 to-indigo-900 w-full p-3 rounded-b-lg flex flex-col justify-center">
-                                <h1 class="font-bold text-xl my-2">{{ image.title }}</h1>
-                                <p class="description text-sm md:text-base">{{ image.description }}</p>
+                                <h1 class="font-bold text-xl my-2 text-white">{{ image.title }}</h1>
+                                <p class="description text-sm md:text-base text-white">{{ image.description }}</p>
                                 <div class="flex flex-row w-full justify-center items-center gap-3 mt-8">
                                     <img [src]="image.icono1" alt="" class="w-1/4">
                                     <img [src]="image.icono2" alt="" class="w-1/4">
@@ -192,8 +192,8 @@
     
                         <ng-container *ngIf="image.contentType === 'carousel3'">
                             <div class="bg-gradient-to-r from-indigo-700 to-indigo-900 w-full p-3 rounded-b-lg flex flex-col justify-center">
-                                <h1 class="font-bold text-xl my-2">{{ image.title }}</h1>
-                                <p class="description text-sm md:text-base">{{ image.description1 }}</p>
+                                <h1 class="font-bold text-xl my-2 text-white">{{ image.title }}</h1>
+                                <p class="description text-sm md:text-base text-white">{{ image.description1 }}</p>
                             </div>
                             <div class="flex text-center flex-row gap-x-4  items-center justify-center mt-4">
                                 <!-- Sección 1 - Botes y Bolis -->
@@ -228,12 +228,12 @@
     
                         <ng-container *ngIf="image.contentType === 'carousel4'">
                             <div class="bg-gradient-to-r from-indigo-700 to-indigo-900 w-full p-3 rounded-b-lg flex flex-col justify-center">
-                                <h1 class="font-bold text-xl my-2">{{ image.title }}</h1>
-                                <p class="description text-lg md:text-base">{{ image.description }}</p>
+                                <h1 class="font-bold text-xl my-2 text-white">{{ image.title }}</h1>
+                                <p class="description text-lg md:text-base text-white">{{ image.description }}</p>
                             </div>
     
                             <div class="w-full items-center justify-center flex">
-                                <button (click)="navigate(image.link)" class="boton-overlay">
+                                <button (click)="navigate(image.link)" class="boton-overlay text-white">
                                     {{ image.actionText }}
                                 </button>
                             </div>

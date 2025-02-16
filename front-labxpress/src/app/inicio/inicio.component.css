@@ -1,1 +1,127 @@
-/*# sourceMappingURL=inicio.component.css.map */
+@charset "UTF-8";
+.responsiveCarousel {
+  display: none;
+}
+
+.cuerpo {
+  height: screen !important;
+}
+
+.carousel {
+  width: 85vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+.carousel .card {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+.carousel .card .image-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 1%;
+}
+.carousel .card .image-container .carousel-image {
+  width: 60%;
+  height: 36vw;
+  aspect-ratio: 16/9;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px 0 0 10px;
+}
+.carousel .card .overlay-card {
+  width: 40%;
+  border-radius: 0 10px 10px 0;
+  background-color: #1a2c39;
+  height: 36vw;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  justify-content: center;
+}
+.carousel .card .overlay-card h1 {
+  font-size: 1.5rem;
+  margin: 2% auto;
+  width: 90%;
+  border-radius: 5px;
+  padding: 1rem;
+  text-align: center;
+}
+.carousel .card .overlay-card .description {
+  text-align: justify;
+  font-size: 0.85rem;
+  width: 90%;
+  margin-left: 2rem;
+}
+.carousel .card .overlay-card .description-xl {
+  font-size: 0.8rem;
+  margin-top: 2vh;
+  padding: 2%;
+}
+.carousel .card .boton-overlay {
+  margin: 2% auto;
+  border-radius: 15px;
+  border: none;
+  background-color: #086f86 !important;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 2%;
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+.carousel .card .boton-overlay:hover {
+  transform: scale(1.1);
+}
+.carousel .card .features {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 5%;
+  justify-content: center;
+  gap: 5%;
+  width: 90%;
+}
+.carousel .card .features .feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  width: 25%;
+  min-height: 18vh;
+  text-align: center;
+  background: white;
+}
+.carousel .card .features .feature-item img {
+  margin: 0% auto;
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 768px) {
+  .carousel {
+    display: none;
+  }
+  .responsiveCarousel {
+    display: flex;
+  }
+  .responsiveCarousel .boton-overlay {
+    margin: 2% auto;
+    border-radius: 15px;
+    border: none;
+    background-color: #086f86 !important;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 3%;
+    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  }
+  .responsiveCarousel .boton-overlay:hover {
+    transform: scale(1.1);
+  }
+}/*# sourceMappingURL=inicio.component.css.map */
